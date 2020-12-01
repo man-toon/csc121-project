@@ -1,0 +1,21 @@
+def add_course(id, c_list, r_list, m_list):
+    class_size = []
+    for i in range(3):
+        s = len(roster_list[i])
+        class_size.append(s)
+    add_c = str(input('Enter course you want to add: '))
+    if add_c not in c_list:
+        print('Course not found.')
+        return
+    else:
+        x = course_list.index(add_c)
+    if m_list[x] <= class_size[x]:
+        print('Course already full.')
+        return
+    else:
+        if id in r_list[x]:
+            print('You are already enrolled in that course.')
+            return
+        else:
+            r_list[x].append(id)
+            print('Course added ')
